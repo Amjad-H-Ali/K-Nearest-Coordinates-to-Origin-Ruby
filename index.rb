@@ -15,6 +15,8 @@ end
 =end
 def k_nearest_coor coor, k
 
+	# Sort k portion of array in max heap
+	(k/2 - 1).downto(0) {|indx| max_heap(coor, indx, k)}
 end
 
 
@@ -37,6 +39,7 @@ def max_heap arr, indx, size
 
 	right = left + 1
 
+	# Formula: a² + b² > a² + b²
 	# Reinitialize largest index if left coordinate is further away from the origin
 	if left < size and  (arr[left][0]**2 + arr[left][1]**2) > (arr[largest][0]**2 + arr[largest][1]**2)
 		largest = left
