@@ -1,5 +1,12 @@
 p "K Nearest Point(s) to Origin!"
 
+# Simple function that swaps elements in array
+def swap arr, indx1, indx2
+	temp = arr[indx1]
+	arr[indx1] = arr[indx2]
+	arr[indx2] = temp
+end	
+
 # Function that will sort an array into a Max-Heap
 =begin
 	Params:
@@ -32,7 +39,8 @@ def max_heap arr, indx, size
 		swap(arr, largest, indx)
 
 		max_heap(arr, largest, size)
-				
+end
+
 
 
 
