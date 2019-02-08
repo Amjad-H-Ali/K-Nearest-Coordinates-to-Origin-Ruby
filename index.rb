@@ -17,6 +17,17 @@ def k_nearest_coor coor, k
 
 	# Sort k portion of array in max heap
 	(k/2 - 1).downto(0) {|indx| max_heap(coor, indx, k)}
+
+	# Iterate through remaining portion of array
+	# Compare each distance with the root in k portion of array
+	# If less than, swap. Reheapify k portion of array
+	for indx in k...coor.length
+		if coor[indx][0]**2 + coor[indx][1]**2 > coor[0][0] + coor[0][1]
+
+			swap(coor, 0, indx)
+			max_heap(coor, 0, k)
+		end
+	end		
 end
 
 
